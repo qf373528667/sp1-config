@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: item-service
+    
+#server:
+#  port: 8001    
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka,http://eureka2:2002/eureka
+#  instance:
+#    instance-id: item-service8001
+#    prefer-ip-address: true
+
+info:
+  app.name: microservicecloud
+  company.name: www.lhl.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$        
+  
+  
+---
+spring: 
+  profiles: item1
+
+server:
+  port: 8001
+---
+spring:     
+  profiles: item2
+  
+server:
+  port: 8002
+  
+    
